@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - {{ website }}</title> <!-- Using the 'website' context -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        .register-container {
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .register-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .register-container p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .register-container input[type="text"],
+        .register-container input[type="email"],
+        .register-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .register-container button {
+            width: 100%;
+            padding: 10px;
+            color: #fff;
+            background-color: #5cb85c;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .register-container button:hover {
+            background-color: #4cae4c;
+        }
+    </style>
+</head>
+<body>
+
+<div class="register-container">
+    <h2>Register for {{ course }}</h2> <!-- Using the 'course' context -->
+    <p>Welcome to {{ website }}!</p> <!-- Using the 'website' context -->
+    <form action="/register/marks/" method="post">
+        {% csrf_token %}
+        <label for="username">username</label>
+        <input type="text" id="username" name="username" required>
+        
+        <label for="marks">Marks</label>
+        <input type="number" id="marks" name="marks" required>
+
+        <button type="submit">Add Marks</button>
+    </form>
+</div>
+
+</body>
+</html>

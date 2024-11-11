@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>description</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for list in lists %} 
+            <tr>
+                <td>{{ list.task }}</td>
+                <td>{{ list.description }}</td>
+                <td>{{ list.date }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
