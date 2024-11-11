@@ -1,4 +1,6 @@
 from django.shortcuts import render,HttpResponse
+
+from regi.forms import RegiForm
 from .models import Person,Hobbies,Marks,Todo
 # Create your views here.
 def register(request):
@@ -61,3 +63,7 @@ def data(request):
         'persons': persons
     }
     return render(request, 'data.html', context)
+
+def edit(request):
+    reg=RegiForm()
+    return render(request,"edit.html",{"regi1":reg})

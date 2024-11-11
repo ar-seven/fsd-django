@@ -9,5 +9,6 @@ urlpatterns =[
     path("marks/",views.marks,name="r"),
     path("data/",views.data),
     path("todo/",views.todo),
-    path("todo_list/",views.todo_list)
+    path("todo_list/",views.todo_list),
+    path("edit/",views.edit)
 ]
