@@ -4,6 +4,10 @@
     <title>Document</title>
 </head>
 <body>
-    {{regi1.as_p}}
+    <form method="POST">
+        {% csrf_token %}
+        {{ regi1.as_p }}
+        <input type="submit" value="Update">
+    </form>
 </body>
 </html>

@@ -64,6 +64,20 @@ def data(request):
     }
     return render(request, 'data.html', context)
 
+# def edit(request):
+#     reg=RegiForm()
+#     return render(request,"edit.html",{"regi1":reg})
+
 def edit(request):
-    reg=RegiForm()
-    return render(request,"edit.html",{"regi1":reg})
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        try:
+            person = Person.objects.get(username=username)
+            person.email = email  # Update the email or any other fields as needed
+            person.save()
+            print("Update Success")
+        except Person.DoesNotExist:
+            print("Person not found")
+    reg = RegiForm()
+    return render(request, "edit.html", {"regi1": reg})
