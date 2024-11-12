@@ -10,7 +10,6 @@
             <tr>
                 <th>Username</th>
                 <th>Email</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -18,9 +17,6 @@
             <tr>
                 <td>{{ person.username }}</td>
                 <td>{{ person.email }}</td>
-                <td><a href="{%url 'edit_email' username=person.username  %}">Edit</a> </td>    
-                <td><a href="{%url 'delete_email' username=person.username  %}">delete</a> </td>  
-                 
             </tr>
             {% endfor %}
         </tbody>
